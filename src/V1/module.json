@@ -1,0 +1,13 @@
+{
+    "name": "V1",
+    "alias": "v1",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "AspireRESTAPI\\V1\\Providers\\V1ServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
