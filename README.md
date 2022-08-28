@@ -1,2 +1,2 @@
-# Aspire-Loan-App
-Customer Loan Application - Admin Approval - Payment Schedule - Repayment According to Schedule
+# Aspire-Loan-App (Rest API)
+Customer Loan Application - Admin Approval - Payment Schedule - Customer Repayment According to Schedule
