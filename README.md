@@ -83,7 +83,7 @@ Features :
     
     - Customer should not pay less than scheduled amount.
     
-    - Customer can pay more than scheduled amount. If customer pay more than scheduled amount, remaining amount will devide into rest of repayment schedule.
+    - Customer can pay more than scheduled amount. If customer pay more than scheduled amount, remaining amount will devide into rest of repayment schedule date.
 
     - Customer can pay whole amount on first scheduled payment date also.  In this case status for rest of schedule payment date will be 'NILL'. And loan status will becaome 'PAID';
         
