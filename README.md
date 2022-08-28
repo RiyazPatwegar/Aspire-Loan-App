@@ -24,7 +24,7 @@ DB_PASSWORD=
 
 php artisan migrate
 
-Required MySql Tables Get Created with above command
+Required MySql Tables Get Created With Above Command
 
 # Start Application
 php artisan serve
