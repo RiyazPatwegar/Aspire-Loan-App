@@ -2,7 +2,7 @@
 Customer Loan Application - Admin Approval - Payment Schedule - Customer Repayment According to Schedule
 
 # Module Design Architecture
-I have used 'nwidart/laravel-modules' to divide application into modules pattern. All API related code has been placed into src/V1.
+I have used 'nwidart/laravel-modules' package to divide application into modules pattern. All API related code has been placed into src/V1.
 
 # Install
 composer install
