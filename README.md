@@ -29,7 +29,7 @@ Required MySql Tables Get Created With Above Command
 # Start Application
 php artisan serve
 
-In my case project running on http://127.0.0.1:8000
+Run above command within project folder to start the application. In my case project running on http://127.0.0.1:8000
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -39,26 +39,54 @@ In my case project running on http://127.0.0.1:8000
 
 http://127.0.0.1:8000/api/v1/customer-loan/apply
 
+Features :
+    
+    - Customer can apply one loan application at a time and not multiple loan application.
+
 
 2) Admin Can View Loan Applications
 
 http://127.0.0.1:8000/api/v1/admin/getLoanApplications
+
+Features :
+    
+    - Admin can view all loan applications.
 
 
 3) Admin Approve Loan
 
 http://127.0.0.1:8000/api/v1/admin/approveLoan
 
+Features :
+    
+    - Admin can approve loan
+    
+    - Once loan get approved by Admin, Weekly repayment (EMI) get scheduled depends upon specified terms.
+
 
 4) Customer Check View Policy and get Loan Details
 
 http://127.0.0.1:8000/api/v1/customer-loan/getLoanStatus
+
+Features :
+    
+    - Customer can only view loan and schedule details against it.
 
 
 5) Customer Payment against Schedule
 
 http://127.0.0.1:8000/api/v1/payment/payNow
 
+Features :
+    
+    - Customer can not pay before loan approval from admin.
+    
+    - Customer should not pay less than scheduled amount.
+    
+    - Customer can pay more than scheduled amount. If customer pay more than scheduled amount, remaining amount will devide into rest of repayment schedule.
+
+    - Customer can pay whole amount on first scheduled payment date also.  In this case status for rest of schedule payment date will be 'NILL'. And loan status will becaome 'PAID';
+        
 
 # Postman Collection
 
