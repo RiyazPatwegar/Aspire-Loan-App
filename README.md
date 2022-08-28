@@ -6,7 +6,7 @@ composer install
 
 Go to project directory and run above command 
 
-# Database Configuration
+# Database Configuration : (.env)
 
 DB_CONNECTION=mysql
 
@@ -20,10 +20,17 @@ DB_USERNAME=root
 
 DB_PASSWORD=
 
+# Migration
+
+php artisan migrate
+
+Required MySql Tables Get Created with above command
+
 # Start Application
 php artisan serve
 
 In my case project running on http://127.0.0.1:8000
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # API List 
