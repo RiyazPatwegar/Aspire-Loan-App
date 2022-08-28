@@ -22,21 +22,21 @@ Route::group(
         ], function () use ($version) {
 
     // Customer APIs
-    /* Step 1 : Customer create a loan */
+    /* Customer create a loan */
     Route::post('/customer-loan/apply', 'CustomerLoan@apply');
 
-    /* Step 2 : Get Customer Loan Details */
+    /* Get Customer Loan Details */
     Route::get('/customer-loan/getLoanStatus', 'CustomerLoan@getLoanStatus');
     
 
     // Admin APIs
-    /* Step 3 : Get Loan Applications */
+    /* Admin Will Get Loan Applications */
     Route::get('/admin/getLoanApplications', 'Admin@getLoanApplications');
     
-    /* Step 4 : Approve Loan Application*/
+    /* Approve Loan Application*/
     Route::post('/admin/approveLoan', 'Admin@approveLoan');
 
-    /* Step 5 : Pay Scheduled Payment*/
+    /* Pay Scheduled Payment*/
     Route::post('/payment/payNow', 'Payment@payNow');
 });
 
