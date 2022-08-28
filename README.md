@@ -60,6 +60,7 @@ http://127.0.0.1:8000/api/v1/customer-loan/getLoanStatus
 http://127.0.0.1:8000/api/v1/payment/payNow
 
 
+# Postman Collection
 
 Please Find Postman Collection Attachment Here [Aspire Assignment.postman_collection.zip](https://github.com/RiyazPatwegar/Aspire-Loan-App/files/9439474/Aspire.Assignment.postman_collection.zip)
 
