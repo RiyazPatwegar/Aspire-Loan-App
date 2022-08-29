@@ -24,6 +24,8 @@ DB_USERNAME=root
 
 DB_PASSWORD=
 
+You can change above configuration as per your local setup.
+
 # Migration
 
 Before run migration you have to configure local database : 'aspire-rest-api' as mentioned above and then run below migration command
