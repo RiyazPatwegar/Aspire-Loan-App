@@ -26,7 +26,7 @@ DB_PASSWORD=
 
 # Migration
 
-Before run migration you have to configure local database : 'aspire-rest-api' as mentioned above
+Before run migration you have to configure local database : 'aspire-rest-api' as mentioned above and then run below migration command
 
 php artisan migrate
 
