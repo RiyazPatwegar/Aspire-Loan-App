@@ -5,6 +5,12 @@ Customer Loan Application - Admin Approval - Payment Schedule - Customer Repayme
 I have used 'nwidart/laravel-modules' package to divide application into modules pattern. All API related code has been placed into 'src/V1/'.
 So that you still have an 'app/Http' part remains reserved, You can use it if you have an frontend application too in one project.
 
+Features:
+
+    You can seperate log folder as per module ex: storage/logs/v1   or /v2 and so on
+    You can seperate code as per different modules ex : src/V1 or src/V2 and so on
+    Each module can have seperate routings ex : Base_URL/api/v1/customer-loan/apply  or  BASE_URL/api/v2/ ...... and so on
+    
 # Install
 composer install
 
