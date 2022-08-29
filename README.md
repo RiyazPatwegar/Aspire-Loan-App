@@ -26,6 +26,8 @@ DB_PASSWORD=
 
 # Migration
 
+Before run migration you have to configure local database : 'aspire-rest-api' as mentioned above and then run below migration command
+
 php artisan migrate
 
 Required MySql Tables Get Created With Above Command
@@ -94,7 +96,8 @@ Features :
 
 # Postman Collection
 
-Please Find Postman Collection Attachment Here [Aspire REST API Assignment.postman_collection.zip](https://github.com/RiyazPatwegar/Aspire-Loan-App/files/9439791/Aspire.REST.API.Assignment.postman_collection.zip)
+Please Find Postman Collection Attachment Here [Aspire_REST_API_Assignment.postman_collection.zip](https://github.com/RiyazPatwegar/Aspire-Loan-App/files/9442201/Aspire_REST_API_Assignment.postman_collection.zip)
+
 
 # API Document
 
