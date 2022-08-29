@@ -96,7 +96,8 @@ Features :
 
 # Postman Collection
 
-Please Find Postman Collection Attachment Here [Aspire REST API Assignment.postman_collection.zip](https://github.com/RiyazPatwegar/Aspire-Loan-App/files/9439791/Aspire.REST.API.Assignment.postman_collection.zip)
+Please Find Postman Collection Attachment Here [Aspire_REST_API_Assignment.postman_collection.zip](https://github.com/RiyazPatwegar/Aspire-Loan-App/files/9442201/Aspire_REST_API_Assignment.postman_collection.zip)
+
 
 # API Document
 
