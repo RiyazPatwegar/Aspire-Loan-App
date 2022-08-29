@@ -26,6 +26,8 @@ DB_PASSWORD=
 
 # Migration
 
+Before run migration you have to configure local database : 'aspire-rest-api' as mentioned above
+
 php artisan migrate
 
 Required MySql Tables Get Created With Above Command
