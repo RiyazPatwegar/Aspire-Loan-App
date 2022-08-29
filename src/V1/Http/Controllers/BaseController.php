@@ -15,6 +15,7 @@ use AspireRESTAPI\V1\Http\Controllers\Utility\Validation;
 use AspireRESTAPI\V1\Http\Controllers\Utility\SecureUtils;
 use Throwable;
 
+/* TO set common log file format */
 abstract class BaseController
 {
     /** @var Logger $logger */
@@ -42,7 +43,7 @@ abstract class BaseController
             Logger::INFO,
             true,
             0777
-        );        
+        );
 
         $clientIp = 'REMOTE_ADDR';
 

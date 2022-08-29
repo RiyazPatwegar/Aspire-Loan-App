@@ -13,7 +13,7 @@ use AspireRESTAPI\V1\Http\Controllers\BaseController;
 use AspireRESTAPI\V1\Models\Sql\LoanApplication;
 use AspireRESTAPI\V1\Models\Sql\PaymentSchedule;
 
-/** 
+/**
  * @author : Riyaz Patwegar <riyaz_patwegar@yahoo.com>
  * @since : 27-08-2022
  * Customer section for loan application and repayment
@@ -21,7 +21,7 @@ use AspireRESTAPI\V1\Models\Sql\PaymentSchedule;
 
 class CustomerLoan extends BaseController
 {
-    
+
     public function __construct()
     {
         /* initiate logger with controller name */
@@ -36,7 +36,7 @@ class CustomerLoan extends BaseController
     public function apply(Request $request)
     {
         $params = $request->all();
-        
+
         $messages = [
             'required' => 'Request cannot be handled due to missing :attribute value',
         ];
@@ -67,15 +67,15 @@ class CustomerLoan extends BaseController
 
         $customerId       =  $params['customerId'];
         $term   =  intval($params['term']);
-        $amount =   $params['amount']; 
-        
+        $amount =   $params['amount'];
+
         $today = new \DateTimeImmutable(
             gmdate('Y-m-d H:i:s', time()),
             new \DateTimeZone("UTC")
         );
 
         try {
-        
+
             /* Check if previous loan not PAID */
             $isExist = LoanApplication::where([
                 'customer_id'  =>  $customerId
@@ -89,10 +89,10 @@ class CustomerLoan extends BaseController
                     "status"    =>  'failed',
                     "message"   =>  'You already have previous loan'
                 ];
-    
+
                 $this->logger->error(Utils::json($params), $error);
-                
-                return response()->json($error, 400);
+
+                return response()->json($error, 200);
             }
 
             \DB::beginTransaction();
@@ -108,8 +108,8 @@ class CustomerLoan extends BaseController
             //loan_status = 'PENDING';      // Default column value has been set
             //approved_by = 0;            // Default column value has been set
 
-            $loan->save();            
-            
+            $loan->save();
+
             $applcationId = $loan->id;
 
             \DB::commit();
@@ -119,12 +119,12 @@ class CustomerLoan extends BaseController
                 "status"    =>  'success',
                 "message"   =>  'Loan has been applied successfully',
                 "data"  =>  [
-                    'application_id'   =>  $applcationId, 
+                    'application_id'   =>  $applcationId,
                 ]
             ];
 
             $this->logger->info(Utils::json($params), $response);
-            
+
             return response()->json($response, 200);
 
         } catch (\Throwable $e) {
@@ -138,27 +138,27 @@ class CustomerLoan extends BaseController
             ];
 
             $this->logger->error(Utils::json($params), $error);
-            
+
             return response()->json($error, 400);
         }
     }
 
     /**
-     * Customer apply for Loan
+     * Customer get loan status
      * @param Request
      * @return Array
      */
     public function getLoanStatus(Request $request)
     {
         $params = $request->all();
-        
+
         $messages = [
             'required' => 'Request cannot be handled due to missing :attribute value',
         ];
 
         $rule = [
             'customerId' =>   'required',
-            'viewPolicyCheck' => 'required'            
+            'viewPolicyCheck' => 'required'
         ];
 
         $validator = Validator::make($params, $rule, $messages);
@@ -190,12 +190,12 @@ class CustomerLoan extends BaseController
             ];
 
             $this->logger->error(Utils::json($params), $error);
-            
-            return response()->json($error, 400);
+
+            return response()->json($error, 200);
         }
 
         try {
-            
+
             $getStatus = LoanApplication::with(['Schedule'])
             ->where([
                 'customer_id'    =>  $customerId
@@ -207,10 +207,10 @@ class CustomerLoan extends BaseController
                     "status"    =>  'failed',
                     "message"   =>  'No Data Found'
                 ];
-    
+
                 $this->logger->error(Utils::json($params), $error);
-                
-                return response()->json($error, 400);
+
+                return response()->json($error, 200);
             }
 
             $response = [
@@ -221,7 +221,7 @@ class CustomerLoan extends BaseController
             ];
 
             $this->logger->info(Utils::json($params), $response);
-            
+
             return response()->json($response, 200);
 
         } catch (\Throwable $e) {
@@ -233,7 +233,7 @@ class CustomerLoan extends BaseController
             ];
 
             $this->logger->error(Utils::json($params), $error);
-            
+
             return response()->json($error, 400);
         }
     }
